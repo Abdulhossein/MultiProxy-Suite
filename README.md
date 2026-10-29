@@ -2,7 +2,7 @@
 
 A single-file, cross-platform (Windows / Linux / **Termux**) proxy manager with a rich terminal UI. It manages **Xray-core** profiles (VMess / VLESS / Trojan / Shadowsocks / …), **Psiphon**, **WireGuard**, **Hysteria2**, **sing-box**, **Tor**, **wg-quick** and **dnstt-client** — with subscriptions, groups, health testing, auto-switching, watchdog failover, load balancing and a live dashboard.
 
-> **Why one file?** MultiProxy is deliberately shipped as a single `mpx.py` script. There is no package structure, no virtualenv, and no install step to get wrong — you copy **one file** to any machine (Windows, Linux, or Termux), run it, and everything else (binaries, geo files, database) is set up automatically inside `mps_data/`. This keeps it easy to move between platforms and simple enough for less technical users to share and use.
+> **Why one file?** MultiProxy is deliberately shipped as a single `mps.py` script. There is no package structure, no virtualenv, and no install step to get wrong — you copy **one file** to any machine (Windows, Linux, or Termux), run it, and everything else (binaries, geo files, database) is set up automatically inside `mps_data/`. This keeps it easy to move between platforms and simple enough for less technical users to share and use.
 
 ---
 
@@ -37,7 +37,7 @@ Everything else (Xray-core, Psiphon tunnel core, geo files, Hysteria2, sing-box,
 
 ```bash
 pip install rich "qrcode[pil]"
-python mpx.py
+python mps.py
 ```
 
 On first run the app:
@@ -119,7 +119,7 @@ The **Public IP** row shows your exit IP (fetched through the proxy via `api.ipi
 
 ```
 MultiProxy/
-├── mpx.py                  # the whole app
+├── mps.py                  # the whole app
 └── mps_data/
     ├── profiles.db         # SQLite (profiles, groups, subscriptions, logs)
     ├── settings.json       # persisted settings
@@ -146,7 +146,7 @@ MultiProxy/
 ```bash
 pkg install python
 pip install rich "qrcode[pil]"
-python mpx.py
+python mps.py
 ```
 
 - Binaries are downloaded for the detected architecture (`aarch64`/`arm`/`x86_64`).
